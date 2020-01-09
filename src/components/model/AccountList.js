@@ -1,13 +1,21 @@
 import React from 'react';
+import Account from './Account';
 
 
 
-const AccountList = ({id, login}) =>{ 
+const AccountList = ({accounts}) =>{ 
     
+    const accountsList = accounts.map(account => {
+        return(
+            <div className="account" key={account.id}>
+                <Account id={account.id} login={account.login} />
+            </div>
+
+        )
+    })
         return(
             <div className="AccountList">
-                <div>Id: { id }</div>
-                <div>Login: { login }</div>
+                {accountsList}
             </div>
 
         )

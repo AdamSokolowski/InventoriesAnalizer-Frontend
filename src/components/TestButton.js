@@ -2,9 +2,17 @@ import React, {Component } from 'react';
 import axios from 'axios';
 
 
+const loadAccounts = (resp) => {
+    
+}
 
 const testButtonClick = (e) => {
-    axios.get('/v1/nos/account/getaccounts').then(resp => console.log('OK:',resp), error => console.log('Error', error))
+    axios.get('/v1/nos/account/getaccounts').then(
+        resp =>{
+            console.log('OK:',resp)
+            loadAccounts();
+        },
+        error => console.log('Error', error))
   }
 
 class TestButton extends Component{
