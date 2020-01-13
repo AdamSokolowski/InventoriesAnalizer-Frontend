@@ -1,17 +1,16 @@
 import React from 'react';
+import { ListItem, ListItemText } from '@material-ui/core';
 
 
 
 const Account = ({id, login}) =>{ 
     
         return(
-            <div className="Account">
-                <div>Id: { id }</div>
-                <div>Login: { login }</div>
-            </div>
-
+            <ListItem button>
+                <ListItemText primary={login}/>
+            </ListItem>
         )
     }
 
 
-export default Account
+export default Account;

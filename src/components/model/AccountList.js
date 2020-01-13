@@ -1,5 +1,6 @@
 import React from 'react';
 import Account from './Account';
+import { List } from '@material-ui/core';
 
 
 
@@ -7,19 +8,15 @@ const AccountList = ({accounts}) =>{
     
     const accountsList = accounts.map(account => {
         return(
-            <div className="account" key={account.id}>
                 <Account id={account.id} login={account.login} />
-            </div>
-
         )
     })
         return(
-            <div className="AccountList">
+            <List component="ul">
                 {accountsList}
-            </div>
-
+            </List>
         )
     }
 
 
-export default AccountList
+export default AccountList;

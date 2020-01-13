@@ -1,18 +1,16 @@
 import React from 'react';
 import './App.css';
-import TestButton from './components/TestButton';
-import AccountContainer from './components/AccountContainer';
-import AddAccount from './components/AddAccount';
-
-
+import Header from './Header';
+import Footer from './Footer';
+import SplitGrid from './components/material/SplitGrid/index';
 
 
 function App() {
   return (
     <div className="App">
-        <AccountContainer />
-        <TestButton />
-        <AddAccount/>
+        <Header />
+        <SplitGrid />
+        <Footer />
     </div>
   );
 }
