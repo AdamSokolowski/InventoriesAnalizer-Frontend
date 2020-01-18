@@ -1,12 +1,14 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography } from '@material-ui/core';
+import AddAccountDialogButton from './AddAccountDialogButton';
 
 
 function SimpleAppBar() {
   return (
       <AppBar position='static'>
         <Toolbar>
-          <Typography variant='headline' color='inherit'>Inventory Analizer</Typography>
+          <Typography variant='h6' color='inherit' style={{flex: 1 }}>Inventory Analizer</Typography>
+          <AddAccountDialogButton />
         </Toolbar>
       </AppBar>
 

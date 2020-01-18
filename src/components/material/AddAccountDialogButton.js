@@ -5,6 +5,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { Button, TextField } from '@material-ui/core';
+import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import axios from "axios";
 
@@ -17,15 +18,16 @@ class AddAccountDialogButton extends Component {
   }
 
   handleToggle = () => {
-    this.setState({open: !this.state.open})
+    this.setState({ open: !this.state.open })
   }
 
-  handleChange = name => ({ target: {value} }) => {
+  handleChange = () => ({ target: { value } }) => {
     this.setState({ accountName: value })
   }
 
   handleSubmit = () => {
-    axios.post('/v1/nos/account/newaccount',{login: this.state.accountName}).then(resp => console.log('OK:',resp), error => console.log('Error', error));
+    axios.post('/v1/nos/account/newaccount', { login: this.state.accountName }).then(resp => console.log('OK:', resp), error => console.log('Error', error));
+    this.handleToggle();
   }
 
   render() {
@@ -33,10 +35,10 @@ class AddAccountDialogButton extends Component {
 
     return (
       <Fragment>
-
-        <Button variant='fab' onClick={this.handleToggle} >
+        <Fab color="primary" size="small" aria-label="add" onClick={this.handleToggle}>
           <AddIcon />
-        </Button>
+        </Fab>
+
 
         <Dialog open={open} onClose={this.handleToggle} aria-labelledby="form-dialog-title">
           <DialogTitle id="form-dialog-title">Add Account</DialogTitle>
