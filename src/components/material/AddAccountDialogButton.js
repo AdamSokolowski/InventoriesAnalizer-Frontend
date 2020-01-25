@@ -27,6 +27,7 @@ class AddAccountDialogButton extends Component {
 
   handleSubmit = () => {
     axios.post('/v1/nos/account/newaccount', { login: this.state.accountName }).then(resp => console.log('OK:', resp), error => console.log('Error', error));
+    this.setState({ accountName: ''})
     this.handleToggle();
   }
 
