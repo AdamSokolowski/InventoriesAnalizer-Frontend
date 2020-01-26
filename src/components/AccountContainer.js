@@ -3,8 +3,6 @@ import AccountList from './model/AccountList';
 import axios from 'axios';
 
 
-
-
 class AccountContainer extends Component {
 
     state = {

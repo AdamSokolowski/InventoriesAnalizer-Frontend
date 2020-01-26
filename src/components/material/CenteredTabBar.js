@@ -5,11 +5,15 @@ import { Paper, Tabs, Tab } from '@material-ui/core';
 
 function CenteredTabBar({items}) {
 
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event, newValue) => {setValue(newValue)}
 
   return(
         <Paper>
         <Tabs
-          value={0}
+          value={value}
+          onChange={handleChange}
           indicatorColor="primary"
           textColor="primary"
           centered

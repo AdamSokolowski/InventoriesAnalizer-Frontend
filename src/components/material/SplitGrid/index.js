@@ -9,11 +9,11 @@ const styleProp = {
 
 function SplitGrid() {
   return (
-    <Grid container sm>
-        <Grid item sm={3}>
+    <Grid container xs>
+        <Grid item xs={5} sm={3}>
             <LeftPane styleProp={styleProp} />
         </Grid>
-        <Grid item sm>
+        <Grid item xs={7} sm>
             <RightPane styleProp={styleProp} />
         </Grid>
     </Grid>
