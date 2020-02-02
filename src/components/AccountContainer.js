@@ -28,7 +28,7 @@ class AccountContainer extends Component {
     render() {
         return(
             <div className="AccountContainer">
-                <AccountList accounts={this.state.accounts}/>
+                <AccountList accounts={this.state.accounts} callAccountsRequest={this.accountsRequest} />
             </div>
         );
     }

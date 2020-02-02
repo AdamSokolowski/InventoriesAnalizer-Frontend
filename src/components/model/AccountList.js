@@ -1,10 +1,14 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import Account from './Account';
-import { List } from '@material-ui/core';
+import { List, Paper } from '@material-ui/core';
+import AddAccountDialogButton from '../material/AddAccountDialogButton';
 
+const stylePropLeft = {
+    PaperList: {padding: 20, marginTop: 10, marginBottom: 0, height: 500-45, overflowY: 'auto'},
+    PaperListBar: {marginTop: 0, height: 45} 
+}
 
-
-const AccountList = ({accounts}) =>{ 
+const AccountList = ({accounts, callAccountsRequest}) =>{ 
     
     const accountsList = accounts.map(account => {
         return(
@@ -12,9 +16,16 @@ const AccountList = ({accounts}) =>{
         )
     })
         return(
-            <List component="ul">
-                {accountsList}
-            </List>
+            <Fragment>
+                <Paper elevation={0} style={stylePropLeft.PaperList}>
+                    <List component="ul">
+                        {accountsList}
+                    </List>
+                </Paper>
+                <Paper style={stylePropLeft.PaperListBar}>
+                    <AddAccountDialogButton callAccountsRequest={callAccountsRequest}/>
+                </Paper>
+            </Fragment>
         )
     }
 

@@ -11,7 +11,7 @@ function SplitGrid() {
   return (
     <Grid container xs>
         <Grid item xs={5} sm={3}>
-            <LeftPane styleProp={styleProp} />
+            <LeftPane/>
         </Grid>
         <Grid item xs={7} sm>
             <RightPane styleProp={styleProp} />
